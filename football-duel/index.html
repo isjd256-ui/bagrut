@@ -198,33 +198,47 @@ async function connectOnline(code,host){
  try{
    const {joinRoom}=await loadTrystero();
    room=joinRoom({appId:"ultimate-lineup-hebrew-v1"},code);
-   [sendSync,onSync]=room.makeAction("sync");
-   room.onPeerJoin(peerId=>{
+   const syncAction=room.makeAction("sync");
+   sendSync=(data,target)=>syncAction.send(data,target?{target}:undefined);
+   room.onPeerJoin=peerId=>{
      setNet("מחובר",true);
      if(isHost){
        if(!guestPeerId)guestPeerId=peerId;
-       sendSync({type:"state",state:game});
+       sendSync({type:"state",state:game},peerId);
        render();
      }else{
-       sendSync({type:"hello"});
+       sendSync({type:"hello"},peerId);
      }
-   });
-   room.onPeerLeave(peerId=>{if(peerId===guestPeerId)guestPeerId=null;setNet("היריב התנתק",false);render()});
-   onSync((msg,peerId)=>{
+   };
+   room.onPeerLeave=peerId=>{
+     if(peerId===guestPeerId)guestPeerId=null;
+     setNet("היריב התנתק",false);
+     render();
+   };
+   syncAction.onMessage=(msg,{peerId})=>{
      if(!msg||typeof msg!=="object")return;
      if(isHost){
        if(!guestPeerId)guestPeerId=peerId;
        if(peerId!==guestPeerId)return;
-       if(msg.type==="hello"){sendSync({type:"state",state:game});render()}
+       if(msg.type==="hello"){sendSync({type:"state",state:game},peerId);render()}
        if(msg.type==="patch"&&msg.slot===1){
-         game.lineups[1]=msg.lineup||{};game.formations[1]=msg.formation||"4-3-3";game.locked[1]=!!msg.locked;
-         saveOnline();maybeResolveOnline();broadcastState();render()
+         game.lineups[1]=msg.lineup||{};
+         game.formations[1]=msg.formation||"4-3-3";
+         game.locked[1]=!!msg.locked;
+         saveOnline();
+         maybeResolveOnline();
+         broadcastState();
+         render();
        }
        if(msg.type==="tiebreak"&&game.result&&game.result.goals[0]===game.result.goals[1]){startTiebreak()}
      }else if(msg.type==="state"){
-       game=msg.state;mode="online";screen=game.result?"result":"builder";saveOnline();render()
+       game=msg.state;
+       mode="online";
+       screen=game.result?"result":"builder";
+       saveOnline();
+       render();
      }
-   });
+   };
    if(!host){screen="waiting";render();setTimeout(()=>{if(sendSync)sendSync({type:"hello"})},700)}
  }catch(err){setNet("שגיאת חיבור",false);app.innerHTML='<div class="card"><h2>לא הצלחנו להתחבר לרשת המשחק</h2><p class="sub">'+escapeHtml(err&&err.message?err.message:"שגיאה לא ידועה")+'</p><button class="secondary" id="backErr">חזרה</button></div>';$("#backErr").onclick=()=>location.href=location.pathname}
 }
