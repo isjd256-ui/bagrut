@@ -189,7 +189,7 @@ async function shareInvite(){
 }
 function setNet(text,on){$("#netStatus").classList.remove("hidden");$("#netText").textContent=text;$("#netDot").classList.toggle("on",!!on)}
 function createRoomCode(){const a=new Uint8Array(5);crypto.getRandomValues(a);return Array.from(a,x=>x.toString(36).padStart(2,"0")).join("").slice(0,9)}
-async function loadTrystero(){return await import("https://esm.run/trystero")}
+async function loadTrystero(){return await import("https://esm.run/trystero@0.25.4")}
 async function createOnlineHost(){
  const code=createRoomCode();isHost=true;history.replaceState(null,"",location.pathname+"?room="+code+"&host=1");screen="builder";render();await connectOnline(code,true)
 }
