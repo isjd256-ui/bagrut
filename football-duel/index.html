@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07150f">
+<title>ההרכב האולטימטיבי</title>
+<style>
+:root{--bg:#07150f;--panel:#0d2118;--panel2:#123022;--line:#2c553e;--text:#f7fbf8;--muted:#9cb3a5;--accent:#54e08c;--danger:#ff6b6b;--gold:#f6c85f}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at top,#123623 0,#07150f 42%);color:var(--text);min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}.wrap{width:min(980px,100%);margin:auto;padding:18px 14px 40px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.brand{display:flex;align-items:center;gap:10px}.ball{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#111;font-size:24px}.brand h1{font-size:clamp(22px,5vw,34px);margin:0}.sub{color:var(--muted);font-size:13px}.card{background:rgba(13,33,24,.94);border:1px solid var(--line);border-radius:20px;padding:18px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mode{min-height:145px;text-align:right;border:1px solid var(--line);background:linear-gradient(145deg,#153d29,#0d2118);color:var(--text);border-radius:18px;padding:18px}.mode strong{display:block;font-size:20px;margin-bottom:8px}.mode span{color:var(--muted);line-height:1.5}.mode:hover{border-color:var(--accent)}.primary{border:0;background:var(--accent);color:#06150d;font-weight:800;border-radius:13px;padding:13px 16px;min-height:46px}.secondary{border:1px solid var(--line);background:#10271c;color:var(--text);font-weight:700;border-radius:13px;padding:12px 14px;min-height:46px}.danger{background:#3b1717;border-color:#6b2d2d;color:#ffdada}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.section-title{margin:0 0 12px;font-size:19px}.team-picker{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end}.field{display:flex;flex-direction:column;gap:7px}.field label{color:var(--muted);font-size:13px}.field select,.field input{width:100%;border:1px solid var(--line);background:#0b1d15;color:var(--text);padding:12px;border-radius:12px;min-height:46px}.versus{padding:12px 4px;font-weight:900;color:var(--gold)}.notice{border:1px solid #365c45;background:#0c2819;border-radius:14px;padding:12px;color:#caebd5;font-size:14px}.sharebox{display:grid;grid-template-columns:1fr auto;gap:8px}.sharebox input{min-width:0;border:1px solid var(--line);background:#081810;color:var(--text);border-radius:11px;padding:11px;direction:ltr}.status{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 9px;border-radius:999px;background:#173824;color:#bce7ca}.dot{width:8px;height:8px;border-radius:50%;background:#f0ad4e}.dot.on{background:#54e08c}.builder{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:16px;margin-top:14px}.pitch{background:linear-gradient(90deg,rgba(255,255,255,.035) 50%,transparent 50%),linear-gradient(#1a653d,#135432);background-size:50% 100%,100% 100%;border:3px solid rgba(255,255,255,.48);border-radius:20px;min-height:570px;padding:16px 10px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.pitch:before{content:"";position:absolute;inset:50% 0 auto;height:2px;background:rgba(255,255,255,.45)}.pitch:after{content:"";position:absolute;width:120px;height:120px;border:2px solid rgba(255,255,255,.4);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.lineup-row{display:flex;justify-content:center;gap:8px;position:relative;z-index:1}.slot{width:min(110px,22vw);min-height:68px;border:1px solid rgba(255,255,255,.35);background:rgba(5,25,14,.78);color:#fff;border-radius:14px;padding:7px 5px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px}.slot.empty{border-style:dashed}.slot .role{font-size:10px;color:#a9d9b9}.slot .name{font-size:12px;font-weight:800;line-height:1.15;text-align:center}.slot .rate{font-size:11px;color:var(--gold)}.sidebar{display:flex;flex-direction:column;gap:12px}.team-head{display:flex;align-items:center;gap:10px}.badge{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-weight:900;border:2px solid rgba(255,255,255,.7);text-shadow:0 1px 2px #000}.progress{height:8px;background:#06150d;border-radius:999px;overflow:hidden}.progress>i{display:block;height:100%;background:var(--accent);width:0}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}.stat{background:#0a1b13;border:1px solid #234631;border-radius:12px;padding:9px}.stat b{display:block;font-size:18px}.stat span{font-size:11px;color:var(--muted)}.handoff{text-align:center;padding:30px 16px}.handoff .big{font-size:54px}.score{font-size:clamp(48px,14vw,92px);font-weight:1000;letter-spacing:4px;text-align:center;margin:8px 0}.result-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:12px}.winner{color:var(--gold);font-weight:900}.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:flex-end;justify-content:center;padding:14px;z-index:20}.modal.show{display:flex}.sheet{width:min(620px,100%);max-height:82vh;overflow:auto;background:#0d2118;border:1px solid #3e674d;border-radius:22px 22px 12px 12px;padding:14px}.player{width:100%;display:grid;grid-template-columns:1fr auto;gap:8px;text-align:right;background:#0a1b13;color:#fff;border:1px solid #234631;border-radius:12px;padding:11px;margin:7px 0}.player:disabled{opacity:.4}.player b{display:block}.player small{color:var(--muted)}.rating{font-weight:900;color:var(--gold);font-size:20px}.hidden{display:none!important}.tiny{font-size:12px;color:var(--muted)}.footer{text-align:center;color:#789384;font-size:11px;margin-top:18px}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:#0b1d15;color:#fff}.tab.active{background:#1d5134;border-color:#65d596}.online-wait{text-align:center;padding:32px 10px}.spinner{width:42px;height:42px;border:4px solid #244c34;border-top-color:var(--accent);border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.team-picker{grid-template-columns:1fr}.versus{text-align:center;padding:0}.builder{grid-template-columns:1fr}.pitch{min-height:520px}.slot{min-height:62px}.top{align-items:flex-start}.sharebox{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:390px){.wrap{padding-inline:10px}.card{padding:14px}.pitch{padding-inline:5px;min-height:500px}.slot{width:23vw;padding:5px 3px}.slot .name{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><div class="ball">⚽</div><div><h1>ההרכב האולטימטיבי</h1><div class="sub">בנה 11 אגדות • התמודד מול חבר • תן להרכבים לדבר</div></div></div>
+    <div id="netStatus" class="status hidden"><span class="dot" id="netDot"></span><span id="netText">מתחבר…</span></div>
+  </div>
+  <main id="app"></main>
+  <div class="footer">דירוגי השחקנים הם דירוגי משחק פנימיים לצורכי סימולציה בלבד. גרסת דמו עם מאגר פתיחה שניתן להרחבה.</div>
+</div>
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <div class="row between"><div><b id="modalTitle">בחירת שחקן</b><div class="tiny" id="modalSub"></div></div><button class="secondary" id="closeModal">סגור</button></div>
+    <div id="playerList"></div>
+  </div>
+</div>
+<script>
+const TEAMS = [{"id":"real","name":"ריאל מדריד","country":"ספרד","abbr":"RMA","colors":["#ffffff","#6b21a8"],"players":[["איקר קסיאס","GK",97],["טיבו קורטואה","GK",93],["סרחיו ראמוס","DEF",96],["רוברטו קרלוס","DEF",95],["מרסלו","DEF",93],["פרננדו היירו","DEF",94],["דני קרבחאל","DEF",91],["פפה","DEF",92],["זינדין זידאן","MID",98],["לוקה מודריץ׳","MID",97],["טוני קרוס","MID",95],["קאסמירו","MID",93],["לואיס פיגו","MID",95],["כריסטיאנו רונאלדו","FWD",99],["אלפרדו די סטפנו","FWD",99],["ראול","FWD",96],["קרים בנזמה","FWD",96],["פרנץ פושקאש","FWD",98]]},{"id":"barca","name":"ברצלונה","country":"ספרד","abbr":"BAR","colors":["#1d4ed8","#991b1b"],"players":[["ויקטור ואלדס","GK",91],["מארק-אנדרה טר שטגן","GK",92],["קרלס פויול","DEF",96],["דני אלבס","DEF",95],["רונאלד קומאן","DEF",94],["ג׳רארד פיקה","DEF",93],["ג׳ורדי אלבה","DEF",91],["חאבייר מסצ׳ראנו","DEF",91],["צ׳אבי","MID",98],["אנדרס אינייסטה","MID",98],["סרחיו בוסקטס","MID",95],["פפ גווארדיולה","MID",91],["איבן ראקיטיץ׳","MID",90],["ליאו מסי","FWD",100],["רונאלדיניו","FWD",98],["יוהאן קרויף","FWD",99],["לואיס סוארס","FWD",97],["סמואל אטו","FWD",95]]},{"id":"united","name":"מנצ׳סטר יונייטד","country":"אנגליה","abbr":"MUN","colors":["#dc2626","#111827"],"players":[["פטר שמייכל","GK",96],["אדווין ואן דר סאר","GK",94],["ריו פרדיננד","DEF",95],["נמניה וידיץ׳","DEF",95],["גארי נוויל","DEF",90],["פטריס אברה","DEF",91],["יאפ סטאם","DEF",94],["דניס אירווין","DEF",91],["פול סקולס","MID",96],["רוי קין","MID",96],["דייוויד בקהאם","MID",95],["ראיין גיגס","MID",95],["בריאן רובסון","MID",94],["ויין רוני","FWD",96],["ג׳ורג׳ בסט","FWD",99],["אריק קנטונה","FWD",96],["כריסטיאנו רונאלדו","FWD",98],["רוד ואן ניסטלרוי","FWD",94]]},{"id":"arsenal","name":"ארסנל","country":"אנגליה","abbr":"ARS","colors":["#ef4444","#ffffff"],"players":[["דייוויד סימן","GK",93],["ינס להמן","GK",90],["טוני אדמס","DEF",95],["סול קמפבל","DEF",94],["אשלי קול","DEF",94],["לי דיקסון","DEF",90],["קולו טורה","DEF",90],["סטיב בולד","DEF",89],["פטריק ויירה","MID",97],["רובר פירס","MID",94],["פרדי ליונגברג","MID",92],["ססק פברגאס","MID",94],["סנטי קאסורלה","MID",92],["תיירי הנרי","FWD",99],["דניס ברגקאמפ","FWD",97],["איאן רייט","FWD",95],["רובין ואן פרסי","FWD",95],["אלכסיס סאנצ׳ס","FWD",94]]},{"id":"liverpool","name":"ליברפול","country":"אנגליה","abbr":"LIV","colors":["#b91c1c","#f8fafc"],"players":[["אליסון","GK",94],["ריי קלמנס","GK",94],["וירג׳יל ואן דייק","DEF",97],["ג׳יימי קראגר","DEF",92],["סאמי הופייה","DEF",92],["אנדי רוברטסון","DEF",90],["טרנט אלכסנדר-ארנולד","DEF",91],["אלן הנסן","DEF",95],["סטיבן ג׳רארד","MID",98],["גראהם סונס","MID",95],["צ׳אבי אלונסו","MID",95],["ג׳ון בארנס","MID",96],["סטיב מקמנמן","MID",92],["מוחמד סלאח","FWD",97],["קני דלגליש","FWD",98],["איאן ראש","FWD",96],["לואיס סוארס","FWD",97],["פרננדו טורס","FWD",94]]},{"id":"bayern","name":"באיירן מינכן","country":"גרמניה","abbr":"FCB","colors":["#dc2626","#1d4ed8"],"players":[["מנואל נוייר","GK",98],["אוליבר קאן","GK",98],["פרנץ בקנבאואר","DEF",100],["פיליפ לאם","DEF",97],["פאול ברייטנר","DEF",96],["דויד אלאבה","DEF",93],["מאטס הומלס","DEF",92],["ג׳רום בואטנג","DEF",91],["לותר מתאוס","MID",99],["בסטיאן שוויינשטייגר","MID",96],["טוני קרוס","MID",95],["מיכאל באלאק","MID",94],["פרנק ריברי","MID",96],["גרד מילר","FWD",99],["רוברט לבנדובסקי","FWD",99],["אריין רובן","FWD",96],["תומאס מילר","FWD",95],["קרל-היינץ רומניגה","FWD",98]]},{"id":"milan","name":"מילאן","country":"איטליה","abbr":"MIL","colors":["#dc2626","#111827"],"players":[["דידה","GK",93],["סבסטיאנו רוסי","GK",91],["פאולו מאלדיני","DEF",100],["פרנקו בארזי","DEF",100],["אלסנדרו נסטה","DEF",97],["קאפו","DEF",96],["מאורו טאסוטי","DEF",92],["יאפ סטאם","DEF",93],["אנדראה פירלו","MID",97],["רוד חוליט","MID",98],["קאקה","MID",98],["ג׳נארו גאטוזו","MID",93],["קלרנס סיידורף","MID",96],["מרקו ואן באסטן","FWD",100],["אנדריי שבצ׳נקו","FWD",97],["פיליפו אינזאגי","FWD",94],["זלאטן איברהימוביץ׳","FWD",96],["ג׳ורג׳ ויאה","FWD",98]]},{"id":"juve","name":"יובנטוס","country":"איטליה","abbr":"JUV","colors":["#f8fafc","#111827"],"players":[["ג׳אנלואיג׳י בופון","GK",100],["אנג׳לו פרוצי","GK",93],["גאטאנו שיראה","DEF",98],["ג׳ורג׳ו קייליני","DEF",96],["לאונרדו בונוצ׳י","DEF",93],["אנדראה ברצאלי","DEF",93],["ליליאן תוראם","DEF",96],["ג׳אנלוקה זמברוטה","DEF",94],["מישל פלאטיני","MID",99],["פאבל נדבד","MID",97],["אנדראה פירלו","MID",96],["אדגר דווידס","MID",94],["קלאודיו מרקיזיו","MID",92],["אלסנדרו דל פיירו","FWD",99],["רוברטו באג׳ו","FWD",98],["דויד טרזגה","FWD",94],["כריסטיאנו רונאלדו","FWD",97],["עומר סיבורי","FWD",98]]}];
+const FORMATIONS={
+ "4-3-3":{GK:1,DEF:4,MID:3,FWD:3},
+ "4-4-2":{GK:1,DEF:4,MID:4,FWD:2},
+ "3-5-2":{GK:1,DEF:3,MID:5,FWD:2},
+ "4-2-3-1":{GK:1,DEF:4,MID:5,FWD:1}
+};
+const ROLE_LABEL={GK:"שוער",DEF:"הגנה",MID:"קישור",FWD:"התקפה"};
+let screen="home",mode=null,currentSlot=0,editingRole=null,editingIndex=null,game=null,room=null,isHost=false,guestPeerId=null,sendSync=null;
+const app=document.getElementById("app"),modal=document.getElementById("modal"),playerList=document.getElementById("playerList");
+const $=s=>document.querySelector(s);
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function team(id){return TEAMS.find(t=>t.id===id)}
+function teamOptions(sel){return TEAMS.map(t=>'<option value="'+t.id+'" '+(t.id===sel?'selected':'')+'>'+t.name+' · '+t.country+'</option>').join("")}
+function randomPair(){let a=Math.floor(Math.random()*TEAMS.length),b=a;while(b===a)b=Math.floor(Math.random()*TEAMS.length);return[TEAMS[a].id,TEAMS[b].id]}
+function newGame(a,b,m){return{mode:m,teams:[a,b],formations:["4-3-3","4-3-3"],lineups:[{},{}],locked:[false,false],result:null,tiebreak:0}}
+function countsFor(f){return FORMATIONS[f]}
+function selectedIds(slot){return new Set(Object.values(game.lineups[slot]||{}).filter(Boolean).map(p=>p[0]))}
+function complete(slot){const c=countsFor(game.formations[slot]);return["GK","DEF","MID","FWD"].every(r=>{for(let i=0;i<c[r];i++)if(!game.lineups[slot][r+"-"+i])return false;return true})}
+function selectedCount(slot){return Object.keys(game.lineups[slot]||{}).filter(k=>game.lineups[slot][k]).length}
+function avg(arr){return arr.length?arr.reduce((a,b)=>a+b,0)/arr.length:0}
+function metrics(slot){
+ const lu=game.lineups[slot]||{}, buckets={GK:[],DEF:[],MID:[],FWD:[]};
+ Object.entries(lu).forEach(([k,p])=>{if(p){const r=k.split("-")[0];buckets[r].push(p[2])}});
+ const gk=avg(buckets.GK),def=avg(buckets.DEF),mid=avg(buckets.MID),fwd=avg(buckets.FWD);
+ const base=gk*.15+def*.25+mid*.30+fwd*.30;
+ const synergy=Math.min(3,Math.max(0,(Math.min(def,mid,fwd)-82)/4));
+ return{gk,def,mid,fwd,synergy,base:base+synergy};
+}
+function clamp(n,a,b){return Math.max(a,Math.min(b,n))}
+function simulate(){
+ const A=metrics(0),B=metrics(1),rnd=()=> (Math.random()*1.0-.5);
+ const attackA=A.fwd*.45+A.mid*.25+A.base*.30;
+ const attackB=B.fwd*.45+B.mid*.25+B.base*.30;
+ const resistA=A.gk*.35+A.def*.45+A.mid*.20;
+ const resistB=B.gk*.35+B.def*.45+B.mid*.20;
+ const xA=1.45+(attackA-resistB)/8+rnd();
+ const xB=1.45+(attackB-resistA)/8+rnd();
+ let ga=clamp(Math.round(xA),0,5),gb=clamp(Math.round(xB),0,5);
+ return{goals:[ga,gb],metrics:[A,B],seed:Date.now()}
+}
+function saveOnline(){if(mode==="online"&&game){try{localStorage.setItem("huduel:"+new URLSearchParams(location.search).get("room"),JSON.stringify(game))}catch(e){}}}
+function render(){
+ if(screen==="home")return renderHome();
+ if(screen==="setup")return renderSetup();
+ if(screen==="waiting")return renderWaiting();
+ if(screen==="handoff")return renderHandoff();
+ if(screen==="builder")return renderBuilder();
+ if(screen==="result")return renderResult();
+}
+function renderHome(){
+ app.innerHTML='<div class="grid2">'+
+ '<button class="mode" id="localBtn"><strong>👥 משחק ביחד</strong><span>שני שחקנים על אותו מכשיר. כל אחד בונה הרכב בתורו בלי שהיריב רואה.</span></button>'+
+ '<button class="mode" id="onlineBtn"><strong>🌐 משחק אונליין</strong><span>פתח חדר, שלח קישור לחבר ושחקו משני מכשירים בזמן אמת.</span></button>'+
+ '</div><div class="card" style="margin-top:14px"><h2 class="section-title">כניסה לחדר קיים</h2><div class="row"><input id="roomCode" maxlength="20" placeholder="קוד חדר" style="flex:1;min-width:170px;border:1px solid var(--line);background:#0b1d15;color:#fff;padding:12px;border-radius:12px"><button class="primary" id="joinRoomBtn">הצטרף</button></div></div>';
+ $("#localBtn").onclick=()=>{mode="local";screen="setup";render()};
+ $("#onlineBtn").onclick=()=>{mode="online";screen="setup";render()};
+ $("#joinRoomBtn").onclick=()=>{const code=$("#roomCode").value.trim().toLowerCase();if(!code)return;location.href=location.pathname+"?room="+encodeURIComponent(code)+"&guest=1"};
+}
+function renderSetup(){
+ const pair=randomPair();
+ app.innerHTML='<div class="card"><div class="row between"><div><h2 class="section-title">'+(mode==="online"?"פתיחת חדר אונליין":"משחק חדש")+'</h2><div class="tiny">בחרו שתי קבוצות שונות או הגרילו מפגש.</div></div><button class="secondary" id="backHome">חזרה</button></div>'+
+ '<div class="team-picker" style="margin-top:18px"><div class="field"><label>קבוצה לשחקן 1</label><select id="teamA">'+teamOptions(pair[0])+'</select></div><div class="versus">VS</div><div class="field"><label>קבוצה לשחקן 2</label><select id="teamB">'+teamOptions(pair[1])+'</select></div></div>'+
+ '<div class="row" style="margin-top:14px"><button class="secondary" id="randomize">🎲 הגרל קבוצות</button><button class="primary" id="startGame">'+(mode==="online"?"פתח חדר וקבל קישור":"התחל משחק")+'</button></div><div id="setupMsg" class="tiny" style="margin-top:8px"></div></div>';
+ $("#backHome").onclick=()=>{screen="home";render()};
+ $("#randomize").onclick=()=>{const p=randomPair();$("#teamA").value=p[0];$("#teamB").value=p[1]};
+ $("#startGame").onclick=()=>{const a=$("#teamA").value,b=$("#teamB").value;if(a===b){$("#setupMsg").textContent="צריך לבחור שתי קבוצות שונות.";return}game=newGame(a,b,mode);currentSlot=0;if(mode==="local"){screen="builder";render()}else{createOnlineHost()}};
+}
+function renderWaiting(){
+ app.innerHTML='<div class="card online-wait"><div class="spinner"></div><h2>מתחבר לחדר…</h2><p class="sub">ברגע שהמארח יתחבר, תקבל את הקבוצה שלך ותוכל להתחיל לבחור הרכב.</p><button class="secondary" id="leaveWait">חזרה למסך הראשי</button></div>';
+ $("#leaveWait").onclick=()=>{location.href=location.pathname};
+}
+function badgeHtml(t){return '<div class="badge" style="background:linear-gradient(135deg,'+t.colors[0]+','+t.colors[1]+');color:#fff">'+t.abbr+'</div>'}
+function renderBuilder(){
+ const slot=mode==="online"?(isHost?0:1):currentSlot,t=team(game.teams[slot]),cnt=selectedCount(slot);
+ const locked=game.locked[slot];
+ const share=(mode==="online"&&isHost)?shareHtml():"";
+ app.innerHTML=share+'<div class="builder"><div>'+pitchHtml(slot)+'</div><div class="sidebar"><div class="card">'+
+ '<div class="team-head">'+badgeHtml(t)+'<div><b style="font-size:19px">'+t.name+'</b><div class="tiny">'+t.country+' · שחקן '+(slot+1)+'</div></div></div>'+
+ '<div style="margin-top:14px" class="field"><label>פורמציה</label><select id="formation" '+(locked?'disabled':'')+'>'+Object.keys(FORMATIONS).map(f=>'<option '+(f===game.formations[slot]?'selected':'')+'>'+f+'</option>').join("")+'</select></div>'+
+ '<div style="margin-top:12px"><div class="row between tiny"><span>נבחרו '+cnt+'/11</span><span>'+(complete(slot)?"ההרכב מוכן ✓":"בחר את כל העמדות")+'</span></div><div class="progress"><i style="width:'+(cnt/11*100)+'%"></i></div></div>'+
+ '<button class="primary" id="lockBtn" style="width:100%;margin-top:14px" '+(!complete(slot)||locked?'disabled':'')+'>'+(locked?"ההרכב נעול ✓":"נעל הרכב")+'</button>'+
+ (locked?'<div class="notice" style="margin-top:10px">'+(mode==="online"?"ממתין שהיריב ינעל את ההרכב שלו…":"")+'</div>':'')+
+ '</div><div class="card"><b>איך מנצחים?</b><p class="tiny" style="line-height:1.55">האפליקציה משקללת שוער, הגנה, קישור והתקפה, מוסיפה התאמת הרכב וקצת אקראיות של משחק אמיתי. הפירוט נחשף רק בסיום.</p></div></div></div>';
+ $("#formation").onchange=e=>{game.formations[slot]=e.target.value;game.lineups[slot]={};game.result=null;onGameChanged(slot)};
+ $("#lockBtn").onclick=()=>lockLineup(slot);
+ document.querySelectorAll(".slot").forEach(btn=>btn.onclick=()=>{if(locked)return;openPicker(slot,btn.dataset.role,Number(btn.dataset.idx))});
+}
+function pitchHtml(slot){
+ const f=countsFor(game.formations[slot]),lu=game.lineups[slot]||{};
+ const row=r=>'<div class="lineup-row">'+Array.from({length:f[r]},(_,i)=>{const p=lu[r+"-"+i];return '<button class="slot '+(!p?'empty':'')+'" data-role="'+r+'" data-idx="'+i+'"><span class="role">'+ROLE_LABEL[r]+'</span>'+(p?'<span class="name">'+escapeHtml(p[0])+'</span><span class="rate">★ '+p[2]+'</span>':'<span class="name">בחר שחקן</span>')+'</button>'}).join("")+'</div>';
+ return '<div class="pitch">'+row("FWD")+row("MID")+row("DEF")+row("GK")+'</div>'
+}
+function openPicker(slot,role,idx){
+ editingRole=role;editingIndex=idx;const t=team(game.teams[slot]),used=selectedIds(slot),cur=(game.lineups[slot][role+"-"+idx]||[])[0];
+ $("#modalTitle").textContent="בחירת "+ROLE_LABEL[role];$("#modalSub").textContent=t.name;
+ const ps=t.players.filter(p=>p[1]===role).sort((a,b)=>b[2]-a[2]);
+ playerList.innerHTML=ps.map(p=>'<button class="player" data-name="'+escapeHtml(p[0])+'" '+(used.has(p[0])&&p[0]!==cur?'disabled':'')+'><span><b>'+escapeHtml(p[0])+'</b><small>'+ROLE_LABEL[p[1]]+'</small></span><span class="rating">'+p[2]+'</span></button>').join("")+
+ (cur?'<button class="secondary danger" id="removePlayer" style="width:100%;margin-top:8px">הסר מהעמדה</button>':'');
+ modal.classList.add("show");
+ document.querySelectorAll(".player:not(:disabled)").forEach(b=>b.onclick=()=>{const p=ps.find(x=>x[0]===b.dataset.name);game.lineups[slot][role+"-"+idx]=p;modal.classList.remove("show");onGameChanged(slot)});
+ const rm=$("#removePlayer");if(rm)rm.onclick=()=>{delete game.lineups[slot][role+"-"+idx];modal.classList.remove("show");onGameChanged(slot)}
+}
+$("#closeModal").onclick=()=>modal.classList.remove("show");
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove("show")};
+function lockLineup(slot){
+ if(!complete(slot))return;game.locked[slot]=true;onGameChanged(slot);
+ if(mode==="local"){
+   if(slot===0&&!game.locked[1]){screen="handoff";render()}
+   else if(game.locked[0]&&game.locked[1]){game.result=simulate();screen="result";render()}
+ }else{
+   if(isHost)maybeResolveOnline();
+   render();
+ }
+}
+function renderHandoff(){
+ const next=team(game.teams[1]);
+ app.innerHTML='<div class="card handoff"><div class="big">🙈</div><h2>מעבירים את המכשיר</h2><p class="sub">ההרכב של שחקן 1 נעול ומוסתר. עכשיו תור שחקן 2 לבנות את '+next.name+'.</p><button class="primary" id="continueP2">אני שחקן 2 — התחל</button></div>';
+ $("#continueP2").onclick=()=>{currentSlot=1;screen="builder";render()}
+}
+function renderResult(){
+ const a=team(game.teams[0]),b=team(game.teams[1]),r=game.result,ga=r.goals[0],gb=r.goals[1],tie=ga===gb,w=ga>gb?0:1;
+ app.innerHTML='<div class="card"><div class="result-teams"><div>'+badgeHtml(a)+'<h3>'+a.name+'</h3></div><div class="score">'+ga+' : '+gb+'</div><div>'+badgeHtml(b)+'<h3>'+b.name+'</h3></div></div>'+
+ '<div style="text-align:center;margin:8px 0 18px">'+(tie?'<span class="winner">תיקו! הולכים לשובר שוויון.</span>':'<span class="winner">🏆 המנצח: '+team(game.teams[w]).name+'</span>')+'</div>'+
+ '<div class="grid2">'+metricCard(0)+metricCard(1)+'</div>'+
+ '<div class="row" style="margin-top:16px">'+(tie?'<button class="primary" id="tieBreak">שובר שוויון — משנים הרכב</button>':'')+'<button class="secondary" id="newGame">משחק חדש</button></div></div>';
+ $("#newGame").onclick=()=>{if(room)try{room.leave()}catch(e){};location.href=location.pathname};
+ const tb=$("#tieBreak");if(tb)tb.onclick=()=>startTiebreak();
+}
+function metricCard(slot){
+ const m=game.result.metrics[slot],t=team(game.teams[slot]);
+ return '<div class="card"><b>'+t.name+'</b><div class="stats" style="margin-top:10px">'+
+ stat("שוער",m.gk)+stat("הגנה",m.def)+stat("קישור",m.mid)+stat("התקפה",m.fwd)+stat("סינרגיה","+"+m.synergy.toFixed(1))+stat("עוצמה",m.base)+
+ '</div></div>'
+}
+function stat(label,v){return '<div class="stat"><b>'+((typeof v==="number")?v.toFixed(1):v)+'</b><span>'+label+'</span></div>'}
+function startTiebreak(){
+ game.locked=[false,false];game.result=null;game.tiebreak=(game.tiebreak||0)+1;
+ if(mode==="local"){currentSlot=0;screen="builder";render()}else{broadcastState();screen="builder";render()}
+}
+function onGameChanged(slot){
+ saveOnline();
+ if(mode==="online"){
+   if(isHost){broadcastState();maybeResolveOnline()}
+   else if(sendSync)sendSync({type:"patch",slot:1,lineup:game.lineups[1],formation:game.formations[1],locked:game.locked[1]})
+ }
+ render()
+}
+function shareHtml(){
+ const params=new URLSearchParams(location.search),code=params.get("room");
+ const invite=location.origin+location.pathname+"?room="+encodeURIComponent(code)+"&guest=1";
+ return '<div class="card" style="margin-bottom:14px"><div class="row between"><div><b>חדר '+escapeHtml(code)+'</b><div class="tiny">שלח את הקישור לשחקן השני. אין צורך בחשבון.</div></div><div class="status"><span class="dot '+(guestPeerId?'on':'')+'"></span>'+(guestPeerId?'היריב מחובר':'ממתין ליריב')+'</div></div><div class="sharebox" style="margin-top:10px"><input id="inviteLink" readonly value="'+escapeHtml(invite)+'"><button class="primary" id="shareBtn">שתף קישור</button></div></div>'
+}
+async function shareInvite(){
+ const link=$("#inviteLink").value;
+ if(navigator.share){try{await navigator.share({title:"ההרכב האולטימטיבי",text:"בוא לשחק נגדי!",url:link});return}catch(e){}}
+ try{await navigator.clipboard.writeText(link);alert("הקישור הועתק!")}catch(e){$("#inviteLink").select();alert("סמן והעתק את הקישור")}
+}
+function setNet(text,on){$("#netStatus").classList.remove("hidden");$("#netText").textContent=text;$("#netDot").classList.toggle("on",!!on)}
+function createRoomCode(){const a=new Uint8Array(5);crypto.getRandomValues(a);return Array.from(a,x=>x.toString(36).padStart(2,"0")).join("").slice(0,9)}
+async function loadTrystero(){return await import("https://esm.run/trystero@0.25.4")}
+async function createOnlineHost(){
+ const code=createRoomCode();isHost=true;history.replaceState(null,"",location.pathname+"?room="+code+"&host=1");screen="builder";render();await connectOnline(code,true)
+}
+async function connectOnline(code,host){
+ isHost=host;setNet("מתחבר…",false);
+ try{
+   const {joinRoom}=await loadTrystero();
+   room=joinRoom({appId:"ultimate-lineup-hebrew-v1"},code);
+   [sendSync,onSync]=room.makeAction("sync");
+   room.onPeerJoin(peerId=>{
+     setNet("מחובר",true);
+     if(isHost){
+       if(!guestPeerId)guestPeerId=peerId;
+       sendSync({type:"state",state:game});
+       render();
+     }else{
+       sendSync({type:"hello"});
+     }
+   });
+   room.onPeerLeave(peerId=>{if(peerId===guestPeerId)guestPeerId=null;setNet("היריב התנתק",false);render()});
+   onSync((msg,peerId)=>{
+     if(!msg||typeof msg!=="object")return;
+     if(isHost){
+       if(!guestPeerId)guestPeerId=peerId;
+       if(peerId!==guestPeerId)return;
+       if(msg.type==="hello"){sendSync({type:"state",state:game});render()}
+       if(msg.type==="patch"&&msg.slot===1){
+         game.lineups[1]=msg.lineup||{};game.formations[1]=msg.formation||"4-3-3";game.locked[1]=!!msg.locked;
+         saveOnline();maybeResolveOnline();broadcastState();render()
+       }
+       if(msg.type==="tiebreak"&&game.result&&game.result.goals[0]===game.result.goals[1]){startTiebreak()}
+     }else if(msg.type==="state"){
+       game=msg.state;mode="online";screen=game.result?"result":"builder";saveOnline();render()
+     }
+   });
+   if(!host){screen="waiting";render();setTimeout(()=>{if(sendSync)sendSync({type:"hello"})},700)}
+ }catch(err){setNet("שגיאת חיבור",false);app.innerHTML='<div class="card"><h2>לא הצלחנו להתחבר לרשת המשחק</h2><p class="sub">'+escapeHtml(err&&err.message?err.message:"שגיאה לא ידועה")+'</p><button class="secondary" id="backErr">חזרה</button></div>';$("#backErr").onclick=()=>location.href=location.pathname}
+}
+function broadcastState(){if(sendSync&&isHost){sendSync({type:"state",state:game});saveOnline()}}
+function maybeResolveOnline(){
+ if(isHost&&game.locked[0]&&game.locked[1]&&!game.result){game.result=simulate();saveOnline();broadcastState();screen="result";render()}
+}
+document.addEventListener("click",e=>{if(e.target&&e.target.id==="shareBtn")shareInvite();if(e.target&&e.target.id==="tieBreak"&&mode==="online"&&!isHost&&sendSync)sendSync({type:"tiebreak"})});
+(async function boot(){
+ const p=new URLSearchParams(location.search),code=p.get("room");
+ if(code){
+   mode="online";isHost=p.get("host")==="1";
+   if(isHost){
+     try{const saved=localStorage.getItem("huduel:"+code);if(saved)game=JSON.parse(saved)}catch(e){}
+     if(!game){location.href=location.pathname;return}
+     screen=game.result?"result":"builder";render();await connectOnline(code,true)
+   }else{
+     screen="waiting";render();await connectOnline(code,false)
+   }
+ }else render()
+})();
+</script>
+</body>
+</html>
